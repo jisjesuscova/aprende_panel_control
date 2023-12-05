@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  font-family: 'Varela Round', sans-serif;
+}
+
+button {
+  font-family: 'Varela Round', sans-serif;
+  text-transform: none !important;
+}
+
+
+@media (min-width: 700px) {
+  .button-title {
+    font-size: 25px !important;
+  }
+
+  .pdf {
+    height: 750px !important;
+  }
+
+  .pdf_description {
+    font-size: 30px !important;
+  }
+
+  .play-video {
+    font-size: 50px !important;
+    font-weight: bold !important;
+  }
+}
+
+@media (max-width: 699px) {
+  .button-title {
+    font-size: 16px !important;
+    line-height: 1rem;
+  }
+
+  .pdf {
+    height: 500px !important;
+  }
+
+  .pdf_description {
+    font-size: 20px !important;
+  }
+
+  .play-video {
+    font-size: 20px !important;
+    font-weight: bold !important;
+  }
+}
