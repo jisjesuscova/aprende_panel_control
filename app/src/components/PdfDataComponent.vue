@@ -1,6 +1,6 @@
 <template>
     <div class="md:container md:mx-auto">
-        <iframe :src="`https://docs.google.com/viewer?url=${'https://paneldecontrolem.cl/public/storage/' + post.pdf}&embedded=true`" width="100%" class="pdf" style="border: none;"></iframe>
+        <iframe :src="`https://docs.google.com/viewer?url=${'http://paneldecontrolaprende.cl/public/storage/' + post.pdf}&embedded=true`" width="100%" class="pdf" style="border: none;"></iframe>
         <hr class="mt-5 mb-5">
         <h2 class="pdf_description mb-10">
             {{ post.pdf_description }}

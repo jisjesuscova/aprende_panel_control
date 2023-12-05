@@ -89,7 +89,7 @@ export default {
       this.loading = true
 
       try {
-        const response = await axios.get('https://paneldecontrolem.cl/api/front_category/' + this.$route.params.id, {
+        const response = await axios.get('http://paneldecontrolaprende.cl/api/front_category/' + this.$route.params.id, {
           headers: {
             accept: 'application/json'
           }
