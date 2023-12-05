@@ -247,7 +247,7 @@ export default {
 
                 try {
                     const response = await axios.post(
-                        "http://paneldecontrolaprende.cl/api/alliance/store",
+                        "https://paneldecontrolaprende.cl/api/alliance/store",
                         formData,
                         {
                             headers: {

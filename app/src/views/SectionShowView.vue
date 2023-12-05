@@ -47,7 +47,7 @@ export default {
       this.loading = true
 
       try {
-        const response = await axios.get('http://paneldecontrolaprende.cl/api/front_section/show/' + this.$route.params.id, {
+        const response = await axios.get('https://paneldecontrolaprende.cl/api/front_section/show/' + this.$route.params.id, {
           headers: {
             accept: 'application/json'
           }

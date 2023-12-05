@@ -3,7 +3,7 @@
     <div class="flex items-center justify-center h-screen">
       <div class="w-3/4 h-3/4">
         <audio controls>
-          <source :src="`${'http://paneldecontrolaprende.cl/storage/public/files/' + post.audio_src}`" type="audio/mp3">
+          <source :src="`${'https://paneldecontrolaprende.cl/storage/public/files/' + post.audio_src}`" type="audio/mp3">
           Your browser does not support the audio element.
         </audio>
         <hr>

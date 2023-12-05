@@ -690,7 +690,7 @@ export default {
             if(token) {
                 try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/section/all",
+                        "https://paneldecontrolaprende.cl/api/section/all",
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -718,7 +718,7 @@ export default {
             if(token) {
                 try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/region/",
+                        "https://paneldecontrolaprende.cl/api/region/",
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -750,7 +750,7 @@ export default {
                 for (const region_id of region_ids) {
                     try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/commune/" + region_id,
+                        "https://paneldecontrolaprende.cl/api/commune/" + region_id,
                             {
                                 headers: {
                                     Authorization: `Bearer ${token}`,
@@ -778,7 +778,7 @@ export default {
                 for (const region_id of this.region_input) {
                     try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/commune/" + region_id,
+                        "https://paneldecontrolaprende.cl/api/commune/" + region_id,
                         {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -797,7 +797,7 @@ export default {
                 // Obtiene las comunas seleccionadas asociadas a la sección
                 try {
                     const response = await axios.get(
-                    "http://paneldecontrolaprende.cl/api/category_commune/" + this.$route.params.id,
+                    "https://paneldecontrolaprende.cl/api/category_commune/" + this.$route.params.id,
                     {
                         headers: {
                         accept: "application/json",
@@ -865,7 +865,7 @@ export default {
 
                 try {
                     const response = await axios.post(
-                        "http://paneldecontrolaprende.cl/api/category/" + this.$route.params.id,
+                        "https://paneldecontrolaprende.cl/api/category/" + this.$route.params.id,
                         formData,
                         {
                             headers: {
@@ -895,7 +895,7 @@ export default {
             if(token) {
                 try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/category/" + this.$route.params.id,
+                        "https://paneldecontrolaprende.cl/api/category/" + this.$route.params.id,
                         {
                             headers: {
                                 accept: "application/json",
@@ -955,7 +955,7 @@ export default {
 
                 try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/category_region/" + this.$route.params.id,
+                        "https://paneldecontrolaprende.cl/api/category_region/" + this.$route.params.id,
                         {
                             headers: {
                                 accept: "application/json",

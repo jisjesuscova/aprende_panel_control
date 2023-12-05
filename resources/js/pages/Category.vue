@@ -262,7 +262,7 @@ export default {
                     
                     try {
                         const response = await axios.get(
-                            "http://paneldecontrolaprende.cl/api/category/copy/" + id,
+                            "https://paneldecontrolaprende.cl/api/category/copy/" + id,
                             {
                                 headers: {
                                     Authorization: `Bearer ${token}`,
@@ -286,7 +286,7 @@ export default {
             if (token) {
                 try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/category/move_down/" + this.section_input + "/" + id,
+                        "https://paneldecontrolaprende.cl/api/category/move_down/" + this.section_input + "/" + id,
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -297,7 +297,7 @@ export default {
                     
                     try {
                         const response = await axios.get(
-                            "http://paneldecontrolaprende.cl/api/category/search/" + this.section_input,
+                            "https://paneldecontrolaprende.cl/api/category/search/" + this.section_input,
                             {
                                 headers: {
                                     Authorization: `Bearer ${token}`,
@@ -324,7 +324,7 @@ export default {
             if(token) {
                 try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/category/move_up/" + this.section_input + "/" + id,
+                        "https://paneldecontrolaprende.cl/api/category/move_up/" + this.section_input + "/" + id,
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -336,7 +336,7 @@ export default {
                     
                     try {
                         const response = await axios.get(
-                            "http://paneldecontrolaprende.cl/api/category/search/" + this.section_input,
+                            "https://paneldecontrolaprende.cl/api/category/search/" + this.section_input,
                             {
                                 headers: {
                                     Authorization: `Bearer ${token}`,
@@ -368,7 +368,7 @@ export default {
             if(token) {
                 try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/category/",
+                        "https://paneldecontrolaprende.cl/api/category/",
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -396,7 +396,7 @@ export default {
             if(token) {
                 try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/section/all",
+                        "https://paneldecontrolaprende.cl/api/section/all",
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -424,7 +424,7 @@ export default {
             if(token) {
                 try {
                     const response = await axios.get(
-                        "http://paneldecontrolaprende.cl/api/category/search/" + this.section_input,
+                        "https://paneldecontrolaprende.cl/api/category/search/" + this.section_input,
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,

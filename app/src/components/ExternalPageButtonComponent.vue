@@ -16,7 +16,7 @@
                 class="grid h-20 card bg-base-0 rounded-box place-items-center"
                 v-if="post.icon_status_id == 1 && post.icon_type_id == 2 && post.icon != null"
                 >
-                    <img :src="`http://paneldecontrolaprende.cl/storage/files/${post.icon}`" alt="" class="h-24" />
+                    <img :src="`https://paneldecontrolaprende.cl/storage/files/${post.icon}`" alt="" class="h-24" />
                 </div>
                 <div
                     class="grid h-20 card bg-base-0 rounded-box place-items-center font-bold button-title"

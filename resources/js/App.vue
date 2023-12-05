@@ -119,7 +119,7 @@ export default {
             this.loading = true;
 
             axios
-                .post("http://paneldecontrolaprende.cl/api/user/login", formData)
+                .post("https://paneldecontrolaprende.cl/api/user/login", formData)
                 .then((response) => {
                     console.log(response.data.data.user.name);
 

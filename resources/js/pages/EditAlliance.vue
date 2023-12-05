@@ -245,7 +245,7 @@ export default {
 
                 try {
                     const response = await axios.post(
-                        "http://paneldecontrolaprende.cl/api/alliance/" + this.$route.params.id,
+                        "https://paneldecontrolaprende.cl/api/alliance/" + this.$route.params.id,
                         formData,
                         {
                             headers: {
@@ -275,7 +275,7 @@ export default {
 
             try {
                 const response = await axios.get(
-                    "http://paneldecontrolaprende.cl/api/alliance/" + this.$route.params.id,
+                    "https://paneldecontrolaprende.cl/api/alliance/" + this.$route.params.id,
                     {
                         headers: {
                             accept: "application/json",
