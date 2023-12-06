@@ -15,12 +15,6 @@
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/alliances" class="nav-link" data-widget="pushmenu" @click="toggleSidebar">
-                            <i class="nav-icon fas fa-handshake"></i>
-                            Alianzas
-                        </router-link>
-                    </li>
-                    <li class="nav-item">
                         <router-link to="/sections" class="nav-link" data-widget="pushmenu" @click="toggleSidebar">
                             <i class="nav-icon fas fa-puzzle-piece"></i>
                             Secciones
