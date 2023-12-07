@@ -235,7 +235,6 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         try {
-
             if($request->hasFile('icon_image')) { 
                 $icon = time().'_'.'icon.'.$request->icon_image->getClientOriginalExtension();
             } else {
@@ -249,12 +248,10 @@ class ContentController extends Controller
             }
 
             if($request->hasFile('pdf')) { 
-                echo 222;
                 $pdf = time().'_'.'pdf.'.$request->pdf->getClientOriginalExtension();
 
                 $pdf_description = $request->pdf_description;
             } else {
-                echo 3333;
                 $pdf = '';
 
                 $pdf_description = '';
