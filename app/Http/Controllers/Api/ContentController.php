@@ -235,7 +235,9 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         try {
-            echo $request->pdf;
+            echo $request->all();
+            
+
             echo $request->status_id;
             die();
             if($request->hasFile('icon_image')) { 
