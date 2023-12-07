@@ -235,18 +235,21 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         try {
-            echo 555;
-            die();
+
             if($request->hasFile('icon_image')) { 
                 $icon = time().'_'.'icon.'.$request->icon_image->getClientOriginalExtension();
             } else {
-                $html = $request->fa_icon;
+                if ($request->icon_status_input == 1) {
+                    $html = $request->fa_icon;
 
-                $pattern = '/class="(.*?)"/';
+                    $pattern = '/class="(.*?)"/';
 
-                preg_match($pattern, $html, $matches);
+                    preg_match($pattern, $html, $matches);
 
-                $icon = $matches[1];
+                    $icon = $matches[1];
+                } else {
+                    $icon = '';
+                }
             }
             echo 3;
             die();
