@@ -696,6 +696,7 @@ export default {
             this.color = eventData.colors.hex
         },
         onFileChangePdf(e){
+            alert(1)
             this.pdf = e.target.files[0];
             this.noPdf = e.target.files.length;
         },

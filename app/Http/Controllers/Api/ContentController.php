@@ -262,7 +262,7 @@ class ContentController extends Controller
             } else {
                 $content_type_id = $request->content_type_id;
             }
-
+            
             $content = Content::create([
                 'section_id' => $request->section_id,
                 'category_id' => $request->category_id,
