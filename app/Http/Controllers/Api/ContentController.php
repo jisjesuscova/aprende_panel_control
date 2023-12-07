@@ -235,12 +235,7 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         try {
-         $a = $request->all();
-         print_r($a);
 
-
-            echo $request->status_id;
-            die();
             if($request->hasFile('icon_image')) { 
                 $icon = time().'_'.'icon.'.$request->icon_image->getClientOriginalExtension();
             } else {
