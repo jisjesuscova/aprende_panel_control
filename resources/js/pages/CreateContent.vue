@@ -834,7 +834,7 @@ export default {
                 formData.append("url_not_installed_app", this.url_not_installed_app_input);
                 formData.append("whatsapp_type_id", this.whatsapp_type_input);
                 formData.append("whatsapp_url", this.whatsapp_url_input);
-                console.log(formData)
+ 
                 try {
                     const response = await axios.post(
                         "https://paneldecontrolaprende.cl/api/content/store",

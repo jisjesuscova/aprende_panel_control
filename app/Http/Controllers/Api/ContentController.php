@@ -236,6 +236,7 @@ class ContentController extends Controller
     {
         try {
             echo $request->pdf;
+            echo $request->status_id;
             die();
             if($request->hasFile('icon_image')) { 
                 $icon = time().'_'.'icon.'.$request->icon_image->getClientOriginalExtension();
