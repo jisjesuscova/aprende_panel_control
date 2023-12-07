@@ -235,8 +235,9 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         try {
-            echo $request->all();
-            
+         $a = $request->all();
+         print_r($a);
+
 
             echo $request->status_id;
             die();
