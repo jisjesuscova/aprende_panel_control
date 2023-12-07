@@ -251,8 +251,7 @@ class ContentController extends Controller
                     $icon = '';
                 }
             }
-            echo 3;
-            die();
+
             if($request->hasFile('pdf')) { 
                 $pdf = time().'_'.'pdf.'.$request->pdf->getClientOriginalExtension();
 
