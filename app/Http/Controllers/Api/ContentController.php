@@ -240,10 +240,8 @@ class ContentController extends Controller
             } else {
                 $html = $request->fa_icon;
 
-                // Definir la expresión regular
                 $pattern = '/class="(.*?)"/';
 
-                // Realizar la búsqueda mediante la expresión regular
                 preg_match($pattern, $html, $matches);
 
                 $icon = $matches[1];

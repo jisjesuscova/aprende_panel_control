@@ -795,6 +795,7 @@ export default {
 
             if(token) {
                 const formData = new FormData();
+                console.log(this.pdf)
 
                 formData.append("section_id", this.section_input);
                 formData.append("category_id", this.category_input);
