@@ -248,10 +248,12 @@ class ContentController extends Controller
             }
 
             if($request->hasFile('pdf')) { 
+                echo 222;
                 $pdf = time().'_'.'pdf.'.$request->pdf->getClientOriginalExtension();
 
                 $pdf_description = $request->pdf_description;
             } else {
+                echo 3333;
                 $pdf = '';
 
                 $pdf_description = '';
