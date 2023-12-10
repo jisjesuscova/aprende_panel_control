@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('audit', [\App\Http\Controllers\Api\AuditController::class, 'index']);
-Route::post('audit/{id}', [\App\Http\Controllers\Api\AuditController::class, 'update']);
+Route::post('audit', [\App\Http\Controllers\Api\AuditController::class, 'store']);
 
 Route::get('alliance', [\App\Http\Controllers\Api\AllianceController::class, 'index']);
 Route::delete('alliance/{id}', [\App\Http\Controllers\Api\AllianceController::class, 'destroy']);
