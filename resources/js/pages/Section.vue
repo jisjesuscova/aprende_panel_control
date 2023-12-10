@@ -222,7 +222,7 @@ export default {
                 this.loading = false;
                 this.isLoading = false;
 
-                this.audit(0, 'Secciones');
+                this.audit(0, 'Listar Secciones');
             } catch (error) {
                 console.error("Error al obtener la lista de secciones:", error);
             }

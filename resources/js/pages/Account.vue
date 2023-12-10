@@ -31,7 +31,7 @@ export default {
 
         formData.append("user_id", id);
         formData.append("task_id", '0');
-        formData.append("task", 'Account');
+        formData.append("task", 'Página Principal');
 
         try {
           const response = await axios.post(

@@ -850,6 +850,8 @@ export default {
                     this.posts = response.data.data;
                     this.loading = false;
 
+                    this.audit(response.data.data.id, "Creación de Contenido");
+
                     localStorage.setItem("created_content", 1);
 
                     this.$router.push("/contents");
@@ -924,6 +926,36 @@ export default {
                 this.$router.push("/login");
                 this.loading = false;
                 this.isLoading = false;
+            }
+        },
+        async audit(task_id, task) {
+            const token = localStorage.getItem("token");
+
+            const id = localStorage.getItem("id");
+            
+            if (token) {
+                const formData = new FormData();
+
+                formData.append("user_id", id);
+                formData.append("task_id", task_id);
+                formData.append("task", task);
+
+                try {
+                const response = await axios.post(
+                        "https://paneldecontrolaprende.cl/api/audit/store",
+                        formData,
+                        {
+                            headers: {
+                            Authorization: `Bearer ${token}`,
+                            "Content-Type": "multipart/form-data",
+                            },
+                        }
+                        );
+                } catch (error) {
+                console.error("Error al guardar la auditoría:", error);
+                }
+            } else {
+                this.$router.push("/login");
             }
         },
     },

@@ -272,6 +272,8 @@ export default {
                         );
                         
                         this.submit();
+
+                        this.audit(id, "Copiar Categoría");
                     } catch (error) {
                         console.error("Error al copiar la categoría:", error);
                     }
@@ -308,8 +310,10 @@ export default {
 
                         this.posts = response.data.data;
 
+                        this.audit(id, "Mover Categoría Abajo");
+
                     } catch (error) {
-                        console.error("Error al obtener la lista de categorias:", error);
+                        console.error("Error al mover la categoría:", error);
                     }
                 } catch (error) {
                     console.error("Error al mover la categoría:", error);
@@ -347,8 +351,10 @@ export default {
 
                         this.posts = response.data.data;
 
+                        this.audit(id, "Mover Categoría Arriba");
+
                     } catch (error) {
-                        console.error("Error al obtener la lista de categorias:", error);
+                        console.error("Error al mover la categoría:", error);
                     }
                 } catch (error) {
                     console.error("Error al mover la categoría:", error);
@@ -380,6 +386,8 @@ export default {
                     this.posts = response.data.data;
                     this.loading = false;
                     this.isLoading = false;
+
+                    this.audit(0, "Listar Categorías");
                 } catch (error) {
                     console.error(
                         "Error al obtener la lista de categorías:",
@@ -406,6 +414,7 @@ export default {
                     );
 
                     this.section_posts = response.data.data;
+                    
                 } catch (error) {
                     console.error(
                         "Error al obtener la lista de secciones:",
@@ -436,6 +445,8 @@ export default {
                     this.posts = response.data.data;
                     this.loading = false;
                     this.isLoading = false;
+
+                    this.audit(this.section_input, "Buscar Categoría");
                 } catch (error) {
                     console.error(
                         "Error al obtener la lista de secciones:",
@@ -462,7 +473,38 @@ export default {
                         .delete("api/category/" + id, { headers })
                         .then((res) => {
                             this.getData();
+                            this.audit(id, "Eliminar Categoría");
                         });
+                }
+            } else {
+                this.$router.push("/login");
+            }
+        },
+        async audit(task_id, task) {
+            const token = localStorage.getItem("token");
+
+            const id = localStorage.getItem("id");
+            
+            if (token) {
+                const formData = new FormData();
+
+                formData.append("user_id", id);
+                formData.append("task_id", task_id);
+                formData.append("task", task);
+
+                try {
+                const response = await axios.post(
+                        "https://paneldecontrolaprende.cl/api/audit/store",
+                        formData,
+                        {
+                            headers: {
+                            Authorization: `Bearer ${token}`,
+                            "Content-Type": "multipart/form-data",
+                            },
+                        }
+                        );
+                } catch (error) {
+                console.error("Error al guardar la auditoría:", error);
                 }
             } else {
                 this.$router.push("/login");
