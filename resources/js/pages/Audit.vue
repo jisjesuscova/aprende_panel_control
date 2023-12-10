@@ -5,15 +5,8 @@
                 <div class="row mb-2">
                     <div class="col-sm-6 margin-left">
                         <h1>
-                            Alianzas
+                            Auditoría
                         </h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item active">
-                                <router-link to="/add_cashier" class="btn btn-block btn-success">Agregar</router-link>
-                            </li>
-                        </ol>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -81,18 +74,11 @@ export default {
         },
         listPage() {
             this.isLoading = true;
-            this.$axios.get('api/cashier?page='+this.currentPage).then((res) => {
+            this.$axios.get('api/audit?page='+this.currentPage).then((res) => {
                 this.posts = res.data.data;
                 this.isLoading = false;
             })
         },
-        deleteCashier(id) {
-            if (confirm("¿Estás seguro de que deseas eliminar el registro?")) {
-                this.$axios.delete('api/cashier/'+id).then((res) => {
-                    this.listPage();
-                })
-            }
-        }
     },
     async mounted() {
         this.listPage();

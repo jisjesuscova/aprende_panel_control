@@ -107,6 +107,7 @@ export default {
     },
     created() {
         this.token = localStorage.getItem("token");
+        this.id = localStorage.getItem("id");
         this.names = localStorage.getItem("names");
         this.email = localStorage.getItem("email");
     },

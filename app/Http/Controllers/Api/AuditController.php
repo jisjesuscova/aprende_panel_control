@@ -13,7 +13,7 @@ class AuditController extends Controller
      */
     public function index()
     {
-        $audits = Audit::select('audits.id', 'audits.user_id', 'audits.created_at', 'users.name')
+        $audits = Audit::select('audits.id', 'audits.user_id', 'audits.task_id', 'audits.task', 'audits.created_at')
         ->leftJoin('users', 'audits.user_id', '=', 'users.id')
         ->orderByDesc('audits.id')
         ->paginate(10);
@@ -39,7 +39,9 @@ class AuditController extends Controller
     {
         try {
             $audit = Audit::create([
-                'user_id' => $request->user_id
+                'user_id' => $request->user_id,
+                'task_id' => $request->task_id,
+                'task' => $request->task,
             ]);
 
             return response()->json([
