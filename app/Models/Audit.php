@@ -17,7 +17,9 @@ class Audit extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id'
+        'user_id',
+        'task_id',
+        'task',
     ];
 
     protected $dates = ['deleted_at'];
