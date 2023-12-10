@@ -20,19 +20,11 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <o-table :loading="isLoading" :data="posts.current_page && posts.data.length == 0 ? [] : posts.data">
-                                    <o-table-column field="id" label="Id" numeric v-slot="p">
-                                        {{ p.row.id }}
+                                    <o-table-column field="task" label="Acción" v-slot="p">
+                                        {{ p.row.task }}
                                     </o-table-column>
-                                    <o-table-column field="cashier" label="Caja" v-slot="p">
-                                        {{ p.row.cashier }}
-                                    </o-table-column>
-                                    <o-table-column field="" label="" v-slot="p">
-                                        <router-link :to="`/cashier/edit/${p.row.id}`" class="btn btn-success mr-2">
-                                            <i class="fa-solid fa-pencil"></i>
-                                        </router-link>
-                                        <o-button variant="danger" @click="deleteCashier(p.row.id)">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </o-button>
+                                    <o-table-column field="task_id" label="Id" v-slot="p">
+                                        {{ p.row.task_id }}
                                     </o-table-column>
                                 </o-table>
                                 <hr />
