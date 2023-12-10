@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('audits', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
+            $table->integer('task_id');
+            $table->string('task');
             $table->softDeletes();
             $table->timestamps();
         });
