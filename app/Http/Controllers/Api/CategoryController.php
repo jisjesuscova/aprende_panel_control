@@ -22,12 +22,12 @@ class CategoryController extends Controller
         $id = $request->segment(4);
 
         if ($path == 'all') {
-            $categories = Category::select('id', 'section_id', 'status_id', 'title', 'subtitle', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
+            $categories = Category::select('id', 'section_id', 'status_id', 'title', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
             ->where('section_id', $id)
             ->orderBy('position')
             ->get();
         } else {
-            $categories = Category::select('id', 'section_id', 'status_id', 'title', 'subtitle', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
+            $categories = Category::select('id', 'section_id', 'status_id', 'title', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
             ->orderBy('position')
              ->paginate(10);
         }
@@ -45,7 +45,7 @@ class CategoryController extends Controller
     {
         $id = $request->segment(4);
         
-        $categories = Category::select('id', 'section_id', 'status_id', 'title', 'subtitle', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
+        $categories = Category::select('id', 'section_id', 'status_id', 'title', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
              ->where('section_id', $id)
              ->orderBy('position')
              ->paginate(10);
@@ -143,7 +143,6 @@ class CategoryController extends Controller
                 'section_id' => $category_to_copy->section_id,
                 'status_id' => $category_to_copy->status_id,
                 'title' => $category_to_copy->title,
-                'subtitle' => $category_to_copy->subtitle,
                 'google_tag' => $category_to_copy->google_tag,
                 'position' => $category_qty,
                 'color' => $category_to_copy->color,
@@ -274,7 +273,6 @@ class CategoryController extends Controller
                 'section_id' => $request->section_id,
                 'status_id' => $request->status_id,
                 'title' => $request->title,
-                'subtitle' => $request->subtitle,
                 'google_tag' => $request->google_tag,
                 'position' => $request->position,
                 'color' => $request->color,
@@ -449,12 +447,6 @@ class CategoryController extends Controller
         && $request->title != null 
         && $request->title != '') {
             $category->title = $request->title;
-        }
-
-        if ($request->subtitle != 'null' 
-        && $request->subtitle != null 
-        && $request->subtitle != '') {
-            $category->subtitle = $request->subtitle;
         }
 
         if ($request->google_tag != 'null' 

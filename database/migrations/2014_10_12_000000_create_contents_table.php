@@ -17,7 +17,6 @@ return new class extends Migration
             $table->integer('category_id');
             $table->integer('status_id');
             $table->string('title');
-            $table->string('subtitle');
             $table->string('google_tag');
             $table->integer('position');
             $table->text('color');

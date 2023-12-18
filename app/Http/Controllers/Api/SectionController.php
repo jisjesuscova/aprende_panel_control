@@ -24,11 +24,11 @@ class SectionController extends Controller
         $id = $request->segment(3);
 
         if ($id == 'all') {
-            $sections = Section::select('id', 'status_id', 'title', 'subtitle', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
+            $sections = Section::select('id', 'status_id', 'title', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
              ->orderBy('position')
              ->get();
         } else {
-            $sections = Section::select('id', 'status_id', 'title', 'subtitle', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
+            $sections = Section::select('id', 'status_id', 'title', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
              ->orderBy('position')
              ->paginate(10);
         }
@@ -44,7 +44,7 @@ class SectionController extends Controller
      */
     public function data()
     {
-        $sections = Section::select('id', 'status_id', 'title', 'subtitle', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
+        $sections = Section::select('id', 'status_id', 'title', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
              ->orderBy('position')
              ->get();
 
@@ -138,7 +138,6 @@ class SectionController extends Controller
             $section = Section::create([
                 'status_id' => $section_to_copy->status_id,
                 'title' => $section_to_copy->title,
-                'subtitle' => $section_to_copy->subtitle,
                 'google_tag' => $section_to_copy->google_tag,
                 'position' => $section_qty,
                 'color' => $section_to_copy->color,
@@ -269,7 +268,6 @@ class SectionController extends Controller
             $section = Section::create([
                 'status_id' => $request->status_id,
                 'title' => $request->title,
-                'subtitle' => $request->subtitle,
                 'google_tag' => $request->google_tag,
                 'position' => $request->position,
                 'color' => $request->color,
@@ -438,12 +436,6 @@ class SectionController extends Controller
         && $request->title != null 
         && $request->title != '') {
             $section->title = $request->title;
-        }
-
-        if ($request->subtitle != 'null' 
-        && $request->subtitle != null 
-        && $request->subtitle != '') {
-            $section->subtitle = $request->subtitle;
         }
 
         if ($request->google_tag != 'null' 

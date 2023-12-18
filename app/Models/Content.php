@@ -21,7 +21,6 @@ class Content extends Model
         'category_id',
         'status_id',
         'title',
-        'subtitle',
         'google_tag',
         'position',
         'color',

@@ -20,7 +20,6 @@ class Category extends Model
         'section_id',
         'status_id',
         'title',
-        'subtitle',
         'google_tag',
         'position',
         'color',

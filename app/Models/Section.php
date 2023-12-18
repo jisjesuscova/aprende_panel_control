@@ -19,7 +19,6 @@ class Section extends Model
     protected $fillable = [
         'status_id',
         'title',
-        'subtitle',
         'google_tag',
         'position',
         'color',
