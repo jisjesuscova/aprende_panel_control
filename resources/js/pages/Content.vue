@@ -126,12 +126,12 @@
                                         "
                                     >
                                         <o-table-column
-                                            field="id"
-                                            label="Id"
+                                            field="position"
+                                            label="Orden"
                                             numeric
                                             v-slot="p"
                                         >
-                                            {{ p.row.id }}
+                                            {{ p.row.position }}
                                         </o-table-column>
                                         <o-table-column
                                             field="title"
@@ -161,7 +161,8 @@
                                             </router-link>
                                             <a
                                                 variant="danger"
-                                                @click="deleteCategory(p.row.id)"
+                                                @click="deleteContent(p.row.id)"
+                                                class="btn btn-danger mr-2"
                                             >
                                                 <i
                                                     class="fa-solid fa-trash"
@@ -172,6 +173,7 @@
                                                 variant="warning"
                                                 @click="moveDown(p.row.id)"
                                                 v-if="p.row.position != posts.total"
+                                                class="btn btn-warning mr-2"
                                             >
                                                 <i class="fa-solid fa-arrow-down"></i>
                                             </a>
@@ -180,6 +182,7 @@
                                                 variant="warning"
                                                 @click="moveUp(p.row.id)"
                                                 v-if="p.row.position != 1"
+                                                class="btn btn-warning mr-2"
                                             >
                                                 <i class="fa-solid fa-arrow-up"></i>
                                             </a>
@@ -510,7 +513,7 @@ export default {
                 this.loading = false;
             }
         },
-        deleteCategory(id) {
+        deleteContent(id) {
             const token = localStorage.getItem("token");
             
             if (token) {
@@ -522,7 +525,7 @@ export default {
                     };
 
                     this.$axios
-                        .delete("api/category/" + id, { headers })
+                        .delete("api/content/" + id, { headers })
                         .then((res) => {
                             this.getData();
                             this.audit(id, "Eliminar Contenido");
