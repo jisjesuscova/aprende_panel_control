@@ -63,9 +63,11 @@ Route::delete('region/{id}', [\App\Http\Controllers\Api\RegionController::class,
 Route::get('region/{id}', [\App\Http\Controllers\Api\RegionController::class, 'edit']);
 Route::post('region/store', [\App\Http\Controllers\Api\RegionController::class, 'store']);
 Route::post('region/{id}', [\App\Http\Controllers\Api\RegionController::class, 'update']);
+Route::post('region/find', [\App\Http\Controllers\Api\RegionController::class, 'find']);
 
 Route::get('commune/{id}', [\App\Http\Controllers\Api\CommuneController::class, 'index']);
 Route::get('commune', [\App\Http\Controllers\Api\CommuneController::class, 'index']);
+Route::post('commune/find', [\App\Http\Controllers\Api\CommuneController::class, 'find']);
 
 Route::get('section_region/{id}', [\App\Http\Controllers\Api\SectionRegionController::class, 'edit']);
 Route::get('section_commune/{id}', [\App\Http\Controllers\Api\SectionCommuneController::class, 'edit']);
