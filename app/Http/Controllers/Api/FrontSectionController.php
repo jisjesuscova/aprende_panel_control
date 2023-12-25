@@ -13,9 +13,28 @@ class FrontSectionController extends Controller
      */
     public function index(Request $request)
     {
-        $sections = Section::select('id', 'status_id', 'title', 'google_tag', 'position', 'color', 'start_date', 'end_date', 'georeferencing_type_id', 'icon_status_id', 'icon_type_id', 'icon', 'content_type_id', 'video_description', 'video_type_id', 'video_id', 'src_description', 'audio_src', 'text_description', 'pdf_description', 'pdf', 'iframe_description', 'iframe_url', 'phone', 'url_external_page', 'app_type_id', 'url_app', 'uri_app', 'url_desktop_app', 'url_not_installed_app', 'whatsapp_type_id', 'whatsapp_url')
-             ->orderBy('position')
-             ->get();
+        $sections = Section::select('sections.*')
+                ->where(function ($query) use ($request) {
+                    $query->where('georeferencing_type_id', 2)
+                        ->orWhere(function ($query) use ($request) {
+                            $query->where('georeferencing_type_id', 1)
+                                    ->whereExists(function ($subquery) use ($request) {
+                                        $subquery->select(DB::raw(1))
+                                                ->from('section_regions')
+                                                ->whereColumn('section_regions.section_id', 'sections.section_id')
+                                                ->where('section_regions.region_id', $request->region)
+                                                ->whereExists(function ($subsubquery) use ($request) {
+                                                    $subsubquery->select(DB::raw(1))
+                                                                ->from('section_communes')
+                                                                ->whereColumn('section_communes.section_id', 'sections.section_id')
+                                                                ->where('section_communes.commune_id', $request->commune);
+                                                });
+                                    });
+                        });
+                })
+                ->where('sections.status', 1)
+                ->orderBy('sections.position', 'ASC')
+                ->get();
 
         return response()->json([
             'success' => true,
