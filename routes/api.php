@@ -82,7 +82,7 @@ Route::post('audit/store', [\App\Http\Controllers\Api\AuditController::class, 's
 
 Route::post('user/login', [\App\Http\Controllers\Api\UserController::class, 'login']);
 Route::post('user/logout', [\App\Http\Controllers\Api\UserController::class, 'logout']);
-Route::get('front_section', [\App\Http\Controllers\Api\FrontSectionController::class, 'index']);
+Route::get('front_section/{region_id}/{commune_id}', [\App\Http\Controllers\Api\FrontSectionController::class, 'index']);
 Route::get('front_section/show/{id}', [\App\Http\Controllers\Api\FrontSectionController::class, 'show']);
 Route::get('front_category/{id}', [\App\Http\Controllers\Api\FrontCategoryController::class, 'index']);
 Route::get('front_category/show/{id}', [\App\Http\Controllers\Api\FrontCategoryController::class, 'show']);
