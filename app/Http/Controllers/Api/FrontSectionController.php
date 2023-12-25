@@ -22,12 +22,12 @@ class FrontSectionController extends Controller
                                     ->whereExists(function ($subquery) use ($request) {
                                         $subquery->select(DB::raw(1))
                                                 ->from('section_regions')
-                                                ->whereColumn('section_regions.section_id', 'sections.section_id')
+                                                ->whereColumn('section_regions.section_id', 'sections.id')
                                                 ->where('section_regions.region_id', $request->region)
                                                 ->whereExists(function ($subsubquery) use ($request) {
                                                     $subsubquery->select(DB::raw(1))
                                                                 ->from('section_communes')
-                                                                ->whereColumn('section_communes.section_id', 'sections.section_id')
+                                                                ->whereColumn('section_communes.section_id', 'sections.id')
                                                                 ->where('section_communes.commune_id', $request->commune);
                                                 });
                                     });
