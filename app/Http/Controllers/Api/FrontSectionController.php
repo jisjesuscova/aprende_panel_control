@@ -33,7 +33,7 @@ class FrontSectionController extends Controller
                                     });
                         });
                 })
-                ->where('sections.status', 1)
+                ->where('sections.status_id', 1)
                 ->orderBy('sections.position', 'ASC')
                 ->get();
 
