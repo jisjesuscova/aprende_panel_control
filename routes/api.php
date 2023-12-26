@@ -86,5 +86,5 @@ Route::get('front_section/{region_id}/{commune_id}', [\App\Http\Controllers\Api\
 Route::get('front_section/show/{id}', [\App\Http\Controllers\Api\FrontSectionController::class, 'show']);
 Route::get('front_category/{id}/{region_id}/{commune_id}', [\App\Http\Controllers\Api\FrontCategoryController::class, 'index']);
 Route::get('front_category/show/{id}', [\App\Http\Controllers\Api\FrontCategoryController::class, 'show']);
-Route::get('front_content/{section_id}/{category_id}', [\App\Http\Controllers\Api\FrontContentController::class, 'index']);
+Route::get('front_content/{section_id}/{category_id}/{region_id}/{commune_id}', [\App\Http\Controllers\Api\FrontContentController::class, 'index']);
 Route::get('front_content/show/data/{id}', [\App\Http\Controllers\Api\FrontContentController::class, 'show']);
