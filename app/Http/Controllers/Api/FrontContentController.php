@@ -14,7 +14,7 @@ class FrontContentController extends Controller
      */
     public function index(Request $request)
     {
-        $contents = Content::select('contents.*')
+        $contents = Content::select('content.*')
         ->where(function ($query) use ($request) {
             $query->where('georeferencing_type_id', 2)
                 ->orWhere(function ($query) use ($request) {
