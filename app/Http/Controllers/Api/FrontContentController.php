@@ -14,7 +14,7 @@ class FrontContentController extends Controller
      */
     public function index(Request $request)
     {
-        $contents = Content::select('content.*')
+        $contents = Content::select('contents.*')
         ->where(function ($query) use ($request) {
             $query->where('georeferencing_type_id', 2)
                 ->orWhere(function ($query) use ($request) {
@@ -34,7 +34,7 @@ class FrontContentController extends Controller
                 });
         })
         ->where('contents.section_id', $request->section_id)
-        ->where('contents.section_id', $request->category_id)
+        ->where('contents.category_id', $request->category_id)
         ->where('contents.status_id', 1)
         ->orderBy('contents.position', 'ASC')
         ->get();
