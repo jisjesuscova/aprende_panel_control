@@ -26,6 +26,9 @@
                                     <o-table-column field="task_id" label="Id" v-slot="p">
                                         {{ p.row.task_id }}
                                     </o-table-column>
+                                    <o-table-column field="created_at" label="Fecha" v-slot="p">
+                                        {{ p.row.created_at }}
+                                    </o-table-column>
                                 </o-table>
                                 <hr />
                                 <o-pagination
