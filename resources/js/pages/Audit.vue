@@ -27,7 +27,7 @@
                                         {{ p.row.task_id }}
                                     </o-table-column>
                                     <o-table-column field="created_at" label="Fecha" v-slot="p">
-                                        {{ p.row.created_at }}
+                                        {{ fortmatDate(p.row.created_at) }}
                                     </o-table-column>
                                 </o-table>
                                 <hr />
@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
     data() {
         return {
@@ -64,6 +65,9 @@ export default {
         }
     },
     methods: {
+        fortmatDate(date) {
+            return moment(date).format('DD/MM/YYYY HH:mm:ss');
+        },
         updatePage() {
             setTimeout(this.listPage, 200);
         },
