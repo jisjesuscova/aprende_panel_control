@@ -80,7 +80,7 @@ class UserController extends Controller
     public function update(UpdateProfileRequest $request, User $user)
     {
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);
+        $user->password = Hash::make($request->new_password);
         $user->update();
 
         return response()->json([

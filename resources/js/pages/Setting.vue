@@ -14,8 +14,11 @@
                                     <o-field label="Correo" :variant="errors.email ? 'danger' : 'primary'" :message="errors.email">
                                         <o-input type="email" v-model="form.email" model-value="" maxlength="100"> </o-input>
                                     </o-field>
-                                    <o-field label="Nueva Contraseña" :variant="errors.password ? 'danger' : 'primary'" :message="errors.password">
-                                        <o-input type="password" v-model="form.password" model-value="" maxlength="100"> </o-input>
+                                    <o-field label="Contraseña Actual" :variant="errors.password ? 'danger' : 'primary'" :message="errors.old_password">
+                                        <o-input type="password" v-model="form.old_password" model-value="" maxlength="100"> </o-input>
+                                    </o-field>
+                                    <o-field label="Nueva Contraseña" :variant="errors.password ? 'danger' : 'primary'" :message="errors.new_password">
+                                        <o-input type="password" v-model="form.new_password" model-value="" maxlength="100"> </o-input>
                                     </o-field>
                                 </div>
                                 <b-field type="hidden" label="Campo oculto">
@@ -43,12 +46,14 @@ export default {
             form: {
                 id: '',
                 email: '',
-                password: ''
+                new_password: '',
+                old_password: ''
             },
             errors: {
                 id: '',
                 email: '',
-                password: ''
+                new_password: '',
+                old_password: ''
             }
         }
     },
@@ -68,22 +73,23 @@ export default {
                         this.errors.email = error.response.data.email[0]
                     }
 
-                    if(error.response.data.password) {
-                        this.errors.password = error.response.data.password[0]
+                    if(error.response.data.old_password) {
+                        this.errors.old_password = error.response.data.password[0]
+                    }
+
+                    if(error.response.data.new_password) {
+                        this.errors.new_password = error.response.data.password[0]
                     }
                 })
         },
         async getUser() {
             try {
-                // Obtén el ID de sesión de Laravel
                 const UserIdResponse = await this.$axios.get('/user_id');
                 const userId = UserIdResponse.data.user_id;
 
-                // Realiza la solicitud para obtener los datos del usuario
                 const userResponse = await this.$axios.get('/api/user/' + userId);
                 this.form.id = userId;
                 this.form.email = userResponse.data.data.email;
-                this.form.password = userResponse.data.data.password;
             } catch (error) {
                 console.log(error);
             }
