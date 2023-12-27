@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/user_id', function () {
-    return response()->json(['user_id' => auth()->id()]);
+    return response()->json(['user_id' => Auth::user()->id]);
 });
 
 Route::get('/session-data', function () {
