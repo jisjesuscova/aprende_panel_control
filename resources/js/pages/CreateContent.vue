@@ -248,7 +248,7 @@
                                                     class="form-control"
                                                 >
                                                     <option value="">
-                                                        Normal
+                                                        - Seleccionar -
                                                     </option>
                                                     <option value="1">Video</option>
                                                     <option value="3">Texto</option>

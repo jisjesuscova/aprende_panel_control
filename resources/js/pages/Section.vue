@@ -242,6 +242,8 @@ export default {
                         }
                     );
 
+                    this.getData();
+
                     this.audit(id, 'Copiar Sección');
                 } catch (error) {
                     console.error("Error al copiar la sección:", error);

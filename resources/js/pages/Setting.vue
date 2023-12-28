@@ -14,11 +14,11 @@
                                     <o-field label="Correo" :variant="errors.email ? 'danger' : 'primary'" :message="errors.email">
                                         <o-input type="email" v-model="form.email" model-value="" maxlength="100"> </o-input>
                                     </o-field>
-                                    <o-field label="Contraseña Actual" :variant="errors.password ? 'danger' : 'primary'" :message="errors.old_password">
-                                        <o-input type="password" v-model="form.old_password" model-value="" maxlength="100"> </o-input>
-                                    </o-field>
                                     <o-field label="Nueva Contraseña" :variant="errors.password ? 'danger' : 'primary'" :message="errors.new_password">
                                         <o-input type="password" v-model="form.new_password" model-value="" maxlength="100"> </o-input>
+                                    </o-field>
+                                    <o-field label="Contraseña Actual" :variant="errors.password ? 'danger' : 'primary'" :message="errors.old_password">
+                                        <o-input type="password" v-model="form.old_password" model-value="" maxlength="100"> </o-input>
                                     </o-field>
                                 </div>
                                 <b-field type="hidden" label="Campo oculto">

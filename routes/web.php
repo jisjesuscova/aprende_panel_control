@@ -79,4 +79,12 @@ Route::get('/content/create', function () {
     return view('home');
 });
 
+Route::get('/audits', function () {
+    return view('home');
+});
+
+Route::get('/settings', function () {
+    return view('home');
+});
+
 require __DIR__.'/auth.php';
