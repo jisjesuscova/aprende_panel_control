@@ -527,7 +527,7 @@ export default {
                     this.$axios
                         .delete("api/content/" + id, { headers })
                         .then((res) => {
-                            this.getData();
+                            this.submit();
                             this.audit(id, "Eliminar Contenido");
                         });
                 }
