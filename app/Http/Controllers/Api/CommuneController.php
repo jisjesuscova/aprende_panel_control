@@ -33,7 +33,7 @@ class CommuneController extends Controller
     }
 
     /**
-     * Store the form for creating a new resource.
+     * Find the commune from the third party API using the IP.
      *
      * @return \Illuminate\Http\Response
      */
@@ -81,52 +81,5 @@ class CommuneController extends Controller
         $commune = Commune::where('commune', 'like', '%' . $city_name . '%')->first();
         
         return $this->successResponse($commune);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-    /**
-     * Display the specified resource.
-     */
-    public function show(Team $team)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Request $request)
-    {
-        //
     }
 }

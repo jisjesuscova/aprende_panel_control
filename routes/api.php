@@ -14,18 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('audit', [\App\Http\Controllers\Api\AuditController::class, 'index']);
 Route::post('audit', [\App\Http\Controllers\Api\AuditController::class, 'store']);
-
-Route::get('alliance', [\App\Http\Controllers\Api\AllianceController::class, 'index']);
-Route::delete('alliance/{id}', [\App\Http\Controllers\Api\AllianceController::class, 'destroy']);
-Route::get('alliance/{id}', [\App\Http\Controllers\Api\AllianceController::class, 'edit']);
-Route::post('alliance/store', [\App\Http\Controllers\Api\AllianceController::class, 'store']);
-Route::post('alliance/{id}', [\App\Http\Controllers\Api\AllianceController::class, 'update']);
 
 Route::get('section', [\App\Http\Controllers\Api\SectionController::class, 'index']);
 Route::get('section/all', [\App\Http\Controllers\Api\SectionController::class, 'index']);
@@ -82,6 +72,7 @@ Route::post('audit/store', [\App\Http\Controllers\Api\AuditController::class, 's
 
 Route::post('user/login', [\App\Http\Controllers\Api\UserController::class, 'login']);
 Route::post('user/logout', [\App\Http\Controllers\Api\UserController::class, 'logout']);
+
 Route::get('front_section/{region_id}/{commune_id}', [\App\Http\Controllers\Api\FrontSectionController::class, 'index']);
 Route::get('front_section/show/{id}', [\App\Http\Controllers\Api\FrontSectionController::class, 'show']);
 Route::get('front_category/{id}/{region_id}/{commune_id}', [\App\Http\Controllers\Api\FrontCategoryController::class, 'index']);

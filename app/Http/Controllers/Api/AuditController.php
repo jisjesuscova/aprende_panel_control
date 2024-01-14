@@ -25,14 +25,6 @@ class AuditController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -54,36 +46,5 @@ class AuditController extends Controller
                 'error' => $e->getMessage()
             ], 500);
         }
-    }
-    /**
-     * Display the specified resource.
-     */
-    public function show(Team $team)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Request $request)
-    {
-        //
     }
 }

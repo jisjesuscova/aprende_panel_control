@@ -31,18 +31,6 @@ Route::get('/account', function () {
     return view('home');
 });
 
-Route::get('/alliances', function () {
-    return view('home');
-});
-
-Route::get('/alliance/create', function () {
-    return view('home');
-});
-
-Route::get('/alliance/edit/{id}', function () {
-    return view('home');
-});
-
 Route::get('/sections', function () {
     return view('home');
 });

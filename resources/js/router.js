@@ -1,13 +1,10 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Account from './pages/Account.vue'
-import Alliance from './pages/Alliance.vue'
 import Section from './pages/Section.vue'
 import Category from './pages/Category.vue'
 import Content from './pages/Content.vue'
 import Audit from './pages/Audit.vue'
 import Setting from './pages/Setting.vue'
-import CreateAlliance from './pages/CreateAlliance.vue'
-import EditAlliance from './pages/EditAlliance.vue'
 import CreateSection from './pages/CreateSection.vue'
 import EditSection from './pages/EditSection.vue'
 import CreateCategory from './pages/CreateCategory.vue'
@@ -20,16 +17,6 @@ const routes = [
         name:'/',
         path:'/',
         component: Account
-    },
-    {
-        name:'alliances',
-        path:'/alliances',
-        component: Alliance
-    },
-    {
-        name:'alliance/create',
-        path:'/alliance/create',
-        component: CreateAlliance
     },
     {
         name:'/sections',
@@ -55,11 +42,6 @@ const routes = [
         name:'settings',
         path:'/settings',
         component: Setting
-    },
-    {
-        name:'alliance/edit/:id',
-        path:'/alliance/edit/:id',
-        component: EditAlliance
     },
     {
         name:'section/create',

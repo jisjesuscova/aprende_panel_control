@@ -39,7 +39,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Search a listing of the resource.
      */
     public function search(Request $request)
     {
@@ -57,7 +57,7 @@ class CategoryController extends Controller
     }
 
      /**
-     * Show the form for creating a new resource.
+     * Move down a resource.
      */
     public function move_down(Request $request)
     {
@@ -65,7 +65,7 @@ class CategoryController extends Controller
         $id = $request->segment(5);
 
         $category = Category::where('section_id', $section_id)->where('id', $id)->first();
-        $new_up_position = $category->position;
+        $new__position = $category->position;
         $new_up_position = $new_up_position + 1;
         $category->position = $new_up_position;
         $category->save();
@@ -109,15 +109,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Copy a resource to create a new one.
      */
     public function copy(Request $request)
     {
@@ -244,10 +236,8 @@ class CategoryController extends Controller
             } else {
                 $html = $request->fa_icon;
 
-                // Definir la expresión regular
                 $pattern = '/class="(.*?)"/';
 
-                // Realizar la búsqueda mediante la expresión regular
                 preg_match($pattern, $html, $matches);
 
                 $icon = $matches[1];
@@ -379,14 +369,6 @@ class CategoryController extends Controller
                 'error' => $e->getMessage()
             ], 500);
         }
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Team $team)
-    {
-        //
     }
 
     /**
